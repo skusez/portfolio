@@ -319,7 +319,7 @@ const Experience = () => {
 };
 
 const Skills = () => {
-  const { scrollTo } = useScrollIntoView();
+  // const { scrollTo } = useScrollIntoView();
   return (
     <section
       id="skills"
