@@ -26,13 +26,10 @@ const Hero = () => {
       strings: [
         "Frontend Developer",
         "Backend Developer",
-        "Professional Nerd",
         "Infra Engineer",
         "3D Web Creator",
-        "Coffee Lover",
         "UI/UX Designer",
         "Blockchain Developer",
-        "Open Source Contributor",
       ],
       typeSpeed: 100,
       backSpeed: 50,
@@ -52,6 +49,9 @@ const Hero = () => {
       <div className="lg:w-1/2 flex px-4 lg:text-left text-center items-center justify-center">
         <div className="w-max space-y-4">
           <div className="min-w-[380px] ">
+            <h4 className="tracking-wide  text-2xl leading-loose">
+              Looking for a web dev?
+            </h4>
             <h4 className="tracking-wide  text-2xl leading-loose">
               Hi there 👋 I&apos;m
             </h4>
@@ -75,7 +75,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className=" w-full lg:w-1/2 lg:h-full  ">
+      <div className=" w-full lg:w-1/2 lg:h-full h-96  ">
         {/* looping video */}
         <video
           autoPlay
@@ -108,7 +108,7 @@ const About = () => {
       id="about"
       className="before:h-[100dvh] overflow-y-auto scrollbar-thin before:[w-screen] before:top-[100dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-gradient-to-tr before:from-primary/20 before:via-background before:to-background sm:flex-row h-[100dvh] px-4 flex-col max-w-screen-2xl mx-auto flex  justify-center py-20 w-full gap-8"
     >
-      <div className="flex justify-between flex-col self-center h-full text-lg w-full">
+      <div className="flex justify-between flex-col self-center h-full lg:text-lg text-base w-full">
         <div className="mx-auto w-fit  h-44">
           <h1 className="sm:text-4xl  text-2xl font-bold self-start leading-none text-foreground/70">
             Here&apos;s a little bit
@@ -120,70 +120,64 @@ const About = () => {
             </h1>
           </div>
         </div>
-        <div className=" sm:block  flex  flex-col-reverse w-full sm:min-w-[600px] max-w-3xl space-y-4 justify-center items-center mx-auto text-justify ">
-          <img
-            src="/me.JPG"
-            alt="Jordan Skuse"
-            className="w-52 sm:w-72  sm:ml-4  aspect-square sm:float-end text-wrap object-cover rounded-full border-primary "
-          />
-          <div className="space-y-4">
-            <p>
-              I&apos;m passionate about creating beautiful, functional, and
-              user-friendly software that makes people&apos;s lives easier.{" "}
-              <span className="text-primary font-semibold">
-                I&apos;ve been developing since 2021
-              </span>{" "}
-              and have worked on a wide range of projects, from small websites
-              to large-scale applications.{" "}
-              <span className="text-primary font-semibold">
-                My strengths are in blockchain applications.
-              </span>{" "}
-            </p>
-
-            <p className="pb-12 sm:pb-0">
-              I created this ePortfolio to showcase some of my favorite work and
-              to give you a sense of who I am as a developer. If you&apos;d like
-              to work together, please feel free to{" "}
-              <button
-                className="underline font-semibold"
-                onClick={() => scrollTo("contact")}
-              >
-                contact me
-              </button>
-              .
-            </p>
+        <div className="w-full flex-col flex h-full items-center justify-center">
+          <div className=" sm:block  flex  flex-col-reverse w-full sm:min-w-[600px] max-w-3xl space-y-4 justify-center items-center mx-auto text-justify ">
+            <img
+              src="/me.JPG"
+              alt="Jordan Skuse"
+              className="w-52 sm:w-72  sm:ml-4  aspect-square sm:float-end text-wrap object-cover rounded-full border-primary "
+            />
+            <div className="space-y-4">
+              <p>
+                I&apos;m passionate about creating beautiful, functional, and
+                user-friendly software that makes people&apos;s lives easier.{" "}
+                <span className="text-primary font-semibold">
+                  I&apos;ve been developing since 2021
+                </span>{" "}
+                and have worked on a wide range of projects, from small websites
+                to large-scale applications.{" "}
+                <span className="text-primary font-semibold">
+                  My strengths are in blockchain applications.
+                </span>{" "}
+              </p>
+              <p className="pb-12 sm:pb-0">
+                I created this ePortfolio to share my work and experience as a
+                web developer. I intend to keep it up to date with my latest
+                projects and skills.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex max-w-3xl sm:flex-row flex-col gap-8 w-fit self-center">
-          <Testimonial
-            content={
-              <>
-                Jordan posesses skills in every area, it goes beyond just making
-                websites. His technical understanding of development is
-                incredible and I couldn&apos;t be happier with the product
-                he&apos;s created
-              </>
-            }
-            author="Savely Lobanov"
-            jobTitle="CEO, Web3Adventure"
-          />
-          <Testimonial
-            content={
-              <>
-                Jordan has been working for us for over a year now, and
-                we&apos;ve seen him grow into a fantasic developer. He&apos;s
-                passionate about his work, and always adapting to the
-                ever-changing DeFi landscape.
-              </>
-            }
-            author="Cameron Breen"
-            jobTitle="CEO, Froopyland"
-          />
+          <div className="flex max-w-3xl sm:flex-row flex-col gap-8 w-fit self-center">
+            <Testimonial
+              content={
+                <>
+                  Jordan posesses skills in lots of areas, it goes beyond just
+                  making websites. His technical understanding of development is
+                  impressive and I couldn&apos;t be happier with the product
+                  he&apos;s created
+                </>
+              }
+              author="Savely Lobanov"
+              jobTitle="CEO, Web3Adventure"
+            />
+            <Testimonial
+              content={
+                <>
+                  Jordan has been working for us for over a year now, and
+                  we&apos;ve seen him grow into a fantasic developer. He&apos;s
+                  passionate about his work, and always adapting to the
+                  ever-changing DeFi landscape.
+                </>
+              }
+              author="Frank Wang"
+              jobTitle="CEO, Froopyland"
+            />
+          </div>
         </div>
         <Link
           onClick={() => scrollTo("experience")}
           to="#experience"
-          className="text-xl cursor-pointer select-none mx-auto"
+          className="text-4xl cursor-pointer select-none mx-auto"
         >
           <span className="underline font-Rubik font-semibold">
             Education & Experience
@@ -201,7 +195,7 @@ const Testimonial: FC<{
   jobTitle: string;
 }> = ({ content, author, jobTitle }) => (
   <div className="mx-auto text-justify text-base space-y-2 max-w-96">
-    <QuoteIcon className="sm:w-24 w-12 h-12 sm:h-24 mx-auto text-foreground/50" />
+    <QuoteIcon className="lg:w-24 w-8 h-8 lg:h-24 mx-auto text-foreground/50" />
     <i className="opacity-80">{content}</i>
     <div className="text-center">
       <h4 className="text-lg font-semibold">{author}</h4>
@@ -215,103 +209,125 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="before:h-[100dvh] overflow-y-auto flex-col scrollbar-thin before:[w-screen] before:top-[200dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-gradient-to-br before:from-primary/20 before:via-background before:to-background  min-h-[100dvh] px-4 items-center  max-w-screen-2xl mx-auto flex  justify-center  py-20 w-full gap-8"
+      className="before:h-[100dvh] flex-col max-h-dvh scrollbar-thin before:[w-screen] before:top-[200dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-gradient-to-br before:from-primary/20 before:via-background before:to-background  min-h-[100dvh] px-4 items-center  max-w-screen-2xl mx-auto flex  justify-between  pt-20 w-full gap-8"
     >
       {/* timeline */}
-      <div>
-        <h1 className="sm:text-4xl font-Rubik text-2xl font-bold leading-none text-foreground/70">
-          <span className="text-primary ">My Journey</span> So Far
-        </h1>
-      </div>
 
-      <ol className="relative border-s ml-1.5 max-h-dvh border-gray-200 dark:border-gray-700">
-        <li className="mb-10 ms-4">
-          <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            August 2020
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Started learning web development
-          </h3>
-          <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
-            I started learning self taught, watching YouTube tutorials and a
-            platform called FreeCodeCamp. I was recommended to start with HTML
-            and CSS, then move onto Javascript. I then started learning React
-            and Node.js.
-          </p>
-        </li>
-        <li className="mb-10 ms-4">
-          <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            November 2020
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            First project
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
-            I told all my friends and family that I was learning how to program,
-            and I was lucky enough that one of my friends needed a simple
-            website for his business. I built him a website using HTML, CSS and
-            Javascript, and later rewrote it in React. It was the perfect
-            challenge for me at the time.
-          </p>
-        </li>
-        <li className="ms-4">
-          <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            January 2021 - Current
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            First job as a developer
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
-            Through the friend I built the website for, I was introduced to a
-            startup that was looking for a junior developer. Although I was
-            still working on my programming skills, I had other skills that they
-            were looking for, and they were willing to train me up. I&apos;ve
-            been working there ever since.
-          </p>
-        </li>
-        <li className="ms-4 mt-8">
-          <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            August 2021 - Current
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Freelance work
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
-            From the start of my journey, I had been working exlusively in the
-            crypto space After a year of coding every day, I had built up a good
-            network of contacts and I started to take on freelance work.
-            I&apos;ve been working on a range of projects, from small NFT
-            projects to large DeFi platforms.
-          </p>
-        </li>
-        <li className="ms-4 mt-8">
-          <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
-          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            February 2024
-          </time>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Started University
-          </h3>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
-            Although I have been working as a developer for a few years, I
-            decided to go to university to get a degree in Cyber Security,
-            majoring in Blockchain. Through my experiences I have primarily
-            dealt with the Ethereum blockchain, and been responsible for writing
-            smart contracts that generate millions of dollars in transaction
-            volume. Ensuring the security of these programs is paramount, and
-            the foundational knowledge I&apos;m learning in my Bachelor of Cyber
-            Security is reenforcing my skillset and confidence in this area.
-          </p>
-        </li>
-      </ol>
+      <h1 className="sm:text-4xl pt-8 font-Rubik text-2xl font-bold leading-none text-foreground/70">
+        <span className="text-primary ">My Journey</span> So Far
+      </h1>
+      <div className="overflow-y-auto scrollbar-thin scrollbar-track-muted-foreground scrollbar-thumb-primary  h-full max-h-full">
+        <ol className="relative border-s ml-1.5  border-gray-200 dark:border-gray-700">
+          <li className="mb-10 ms-4">
+            <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              August 2020
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              Started learning web development
+            </h3>
+            <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
+              I began my web development journey DIY-style, watching YouTube
+              tutorials and completing online courses through{" "}
+              <a href="https://www.freecodecamp.org/" target="_blank">
+                FreeCodeCamp
+              </a>
+              . I was recommended to start with HTML and CSS, then move onto
+              Javascript. I then started learning React and Node.js.
+            </p>
+          </li>
+          <li className="mb-10 ms-4">
+            <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              November 2020
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              First project
+            </h3>
+            <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
+              I never skipped a day coding from the start of my learning
+              journey. I shared some static websites I created while learning
+              with my friend who needed a landing page for his business, and he
+              was impressed enough to let me code it for him. The website
+              featured an embedded YouTube video and a contact form that
+              forwarded enquiries to a business email address. It was the
+              perfect challenge for my skills at the time.
+            </p>
+          </li>
+          <li className="ms-4">
+            <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              January 2021 - Current
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              First job as a developer
+            </h3>
+            <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
+              I introduced myself to a blockchain startup who were looking for a
+              video creator to create marketing content. At the time, I was
+              working for a media company filming and editing comedy sketches
+              for social media. The interests crossed over perfectly, as I could
+              create valuable work using the skills I was familiar with, while
+              also getting to work with experience developers who would end up
+              taking me under their wing. At the start of 2022 I transitioned to
+              a junior developer role and I have been working for this company
+              ever since.
+            </p>
+            <br />
+            <ol className="list-disc  text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
+              My responsibilities include:
+              <li>Working with new team members</li>
+              <li>Writing & Auditing Smart Contracts</li>
+              <li>Building and managing databases</li>
+              <li>Building and managing APIs</li>
+              <li>Creating and maintaining CI/CD pipelines</li>
+              <li>Implementing UI/UX designs</li>
+              <li>Ensuring the security of applications</li>
+            </ol>
+          </li>
+          <li className="ms-4 mt-8">
+            <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              August 2021 - Current
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              Freelance work
+            </h3>
+            <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
+              I had been working exclusively in the crypto space up until this
+              point, and after a year of coding every day, I had built up a good
+              network of contacts and I started to take on some freelance work.
+              I've been working on a range of projects, from small NFT projects
+              to large DeFi platforms, scaling in complexity as my skills
+              improve.
+            </p>
+          </li>
+          <li className="ms-4 mt-8">
+            <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 border  border-background bg-primary"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              February 2024
+            </time>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              Started University
+            </h3>
+            <p className="text-base font-normal text-gray-500 dark:text-gray-400 max-w-screen-sm">
+              Although I have been working as a developer for a few years, I
+              decided to go to university to get a degree in Cyber Security,
+              majoring in Blockchain. Through my experiences I have primarily
+              dealt with the Ethereum blockchain, and been responsible for
+              writing smart contracts that generate millions of dollars in
+              transaction volume. Ensuring the security of these programs is
+              paramount, and the foundational knowledge I&apos;m learning in my
+              Bachelor of Cyber Security is reenforcing my skillset and
+              confidence in this area.
+            </p>
+          </li>
+        </ol>
+      </div>
       <Link
         onClick={() => scrollTo("skills")}
         to="#skills"
-        className="text-xl cursor-pointer pt-4 select-none mx-auto"
+        className="text-4xl pb-8 cursor-pointer pt-4 select-none mx-auto"
       >
         <span className="underline font-Rubik font-semibold">My Skills</span>
         <span className="no-underline"> 👇</span>
@@ -341,7 +357,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="before:h-[100dvh]  overflow-y-auto flex-col scrollbar-thin before:[w-screen] before:top-[300dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-primary/20 before:via-background before:to-background  min-h-[100dvh] px-4 items-center  max-w-screen-2xl mx-auto flex gap-12 py-32 w-full"
+      className="before:h-dvh  overflow-y-auto flex-col scrollbar-thin before:[w-screen] before:top-[300dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-primary/20 before:via-background before:to-background  min-h-dvh h-dvh px-4 items-center  max-w-screen-2xl mx-auto flex gap-12 pt-20 w-full"
     >
       <h1 className="text-5xl font-bold text-center w-[500px]">
         I&apos;m building <br />
@@ -352,7 +368,7 @@ const Skills = () => {
         <br />
         everyday
       </h1>
-      <div className="grid sm:grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-3 max-h-full h-full overflow-y-auto scrollbar-thin scrollbar-thumb-primary sm:grid-cols-2 gap-6">
         <Card3d
           content={
             <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
@@ -372,7 +388,7 @@ const Skills = () => {
           }
           image={
             <>
-              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+              <div className="absolute text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
                 Frontend
               </div>
               <img
@@ -396,7 +412,7 @@ const Skills = () => {
           }
           image={
             <>
-              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+              <div className="absolute text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
                 Backend
               </div>
               <img
@@ -419,7 +435,7 @@ const Skills = () => {
           }
           image={
             <>
-              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+              <div className="absolute text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
                 Blockchain
               </div>
               <img
@@ -444,7 +460,7 @@ const Skills = () => {
           }
           image={
             <>
-              <div className="absolute  text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+              <div className="absolute  text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
                 Cloud
               </div>
               <img
@@ -469,7 +485,7 @@ const Skills = () => {
           }
           image={
             <>
-              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+              <div className="absolute text-2xl lg:text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
                 Interpersonal
               </div>
               <img
@@ -495,7 +511,7 @@ const Skills = () => {
           }
           image={
             <>
-              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+              <div className="absolute text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
                 3D
               </div>
               <img
@@ -507,6 +523,7 @@ const Skills = () => {
           }
         />
       </div>
+      <p className="pb-4 text-primary">Thankyou for reading!</p>
     </section>
   );
 };
@@ -517,12 +534,12 @@ type Card3dProps = {
 };
 
 const Card3d: FC<Card3dProps> = ({ image, content }) => (
-  <div className="group h-72 font-Rubik w-72 [perspective:1000px]">
+  <div className="group lg:h-72 font-Rubik w-64 h-64  lg:w-72 [perspective:1000px]">
     <div className="relative h-full w-full rounded-xl shadow-sm shadow-primary transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       {/* front of the card image */}
       <div className="absolute inset-0">{image}</div>
       {/* back of the card */}
-      <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-4 backdrop-blur text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+      <div className="absolute overflow-y-auto inset-0 h-full w-full rounded-xl bg-black/80 px-4 backdrop-blur text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
         {content}{" "}
       </div>
     </div>

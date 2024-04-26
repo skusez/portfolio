@@ -6,7 +6,7 @@ type Props = {
   children: ReactNode;
 };
 export const Layout: FC<Props> = ({ children }) => (
-  <ThemeProvider defaultTheme="system">
+  <ThemeProvider defaultTheme="dark">
     <Navbar />
     <main className="w-full  flex flex-col items-center">{children}</main>
   </ThemeProvider>
@@ -35,9 +35,18 @@ const Navbar = () => {
             >
               About
             </button>
-            <a href="#" className="text-foreground">
-              Contact
-            </a>
+            <button
+              onClick={() => scrollTo("experience")}
+              className="text-foreground"
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => scrollTo("skills")}
+              className="text-foreground"
+            >
+              Skills
+            </button>
           </div>
         </div>
       </div>
