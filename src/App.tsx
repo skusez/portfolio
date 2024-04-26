@@ -55,7 +55,7 @@ const Hero = () => {
             <h4 className="tracking-wide  text-2xl leading-loose">
               Hi there 👋 I&apos;m
             </h4>
-            <h1 className="text-8xl font-extrabold  text-primary text-wrap w-72 leading-none ">
+            <h1 className="text-8xl font-Rubik font-extrabold  text-primary text-wrap w-72 leading-none ">
               Jordan Skuse
             </h1>
           </div>
@@ -67,7 +67,7 @@ const Hero = () => {
             <Link
               onClick={() => scrollTo("about")}
               to="#about"
-              className="text-xl cursor-pointer select-none"
+              className="text-lg font-Rubik cursor-pointer select-none"
             >
               <span className="underline font-semibold">About Me</span>
               <span className="no-underline"> 👇</span>
@@ -80,7 +80,9 @@ const Hero = () => {
         <video
           autoPlay
           loop
+          poster="/interpersonal.png"
           muted
+          preload="auto"
           className="object-scale-down h-full w-full"
           src="/memoji.mov"
         ></video>
@@ -108,12 +110,12 @@ const About = () => {
     >
       <div className="flex justify-between flex-col self-center h-full text-lg w-full">
         <div className="mx-auto w-fit  h-44">
-          <h1 className="sm:text-4xl text-2xl font-bold self-start leading-none text-foreground/70">
+          <h1 className="sm:text-4xl  text-2xl font-bold self-start leading-none text-foreground/70">
             Here&apos;s a little bit
           </h1>
           <div className="flex items-center justify-center">
             <div className="h-[5px] w-24 bg-primary"></div>
-            <h1 className="sm:text-8xl text-6xl text-primary font-bold leading-none">
+            <h1 className="sm:text-8xl font-Rubik text-6xl text-primary font-bold leading-none">
               About me
             </h1>
           </div>
@@ -183,7 +185,7 @@ const About = () => {
           to="#experience"
           className="text-xl cursor-pointer select-none mx-auto"
         >
-          <span className="underline font-semibold">
+          <span className="underline font-Rubik font-semibold">
             Education & Experience
           </span>
           <span className="no-underline"> 👇</span>
@@ -217,8 +219,8 @@ const Experience = () => {
     >
       {/* timeline */}
       <div>
-        <h1 className="sm:text-4xl text-2xl font-bold leading-none text-foreground/70">
-          <span className="text-primary">My Journey</span> So Far
+        <h1 className="sm:text-4xl font-Rubik text-2xl font-bold leading-none text-foreground/70">
+          <span className="text-primary ">My Journey</span> So Far
         </h1>
       </div>
 
@@ -309,9 +311,9 @@ const Experience = () => {
       <Link
         onClick={() => scrollTo("skills")}
         to="#skills"
-        className="text-xl cursor-pointer select-none mx-auto"
+        className="text-xl cursor-pointer pt-4 select-none mx-auto"
       >
-        <span className="underline font-semibold">My Skills</span>
+        <span className="underline font-Rubik font-semibold">My Skills</span>
         <span className="no-underline"> 👇</span>
       </Link>
     </section>
@@ -327,63 +329,156 @@ const Skills = () => {
     >
       <div className="grid grid-cols-3 gap-6">
         <Card3d
-          content={<>hello world</>}
+          content={
+            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+              <p>Here are some examples I&apos;ve built:</p>
+              <ol className="list-disc">
+                <li>Business Homepages</li>
+                <li>API Documentation</li>
+                <li>Portfolio Websites</li>
+                <li>Educational Content</li>
+              </ol>
+              <p>
+                I write frontend apps using modern technologies that are easy to
+                maintain and scale. Integrating a CMS allows my clients to
+                easily update their website without knowing how to code.
+              </p>
+            </div>
+          }
           image={
-            <img
-              className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-              src="https://images.unsplash.com/photo-1562583489-bf23ec64651d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"
-              alt=""
-            />
+            <>
+              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+                Frontend
+              </div>
+              <img
+                className="h-full w-full rounded-xl object-contain bg-neutral-800 shadow-xl shadow-black/40"
+                src="/react-typescript.png"
+                alt=""
+              />
+            </>
           }
         />
         <Card3d
-          content={<>hello world</>}
+          content={
+            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+              <p>
+                Backend apps are the backbone of any web application. It&apos;s
+                important to have a solid foundation that can handle a large
+                amount of traffic and data. I&apos;ve built RESTful APIs, SQL
+                databases, user authentication systems and more.
+              </p>
+            </div>
+          }
           image={
-            <img
-              className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-              src="https://images.unsplash.com/photo-1562583489-bf23ec64651d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"
-              alt=""
-            />
+            <>
+              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+                Backend
+              </div>
+              <img
+                className="w-full p-20  aspect-square rounded-xl object-contain  bg-neutral-800 shadow-xl shadow-black/40"
+                src="/database.png"
+                alt=""
+              />
+            </>
           }
         />
         <Card3d
-          content={<>hello world</>}
+          content={
+            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+              <p>
+                Blockchain apps are my specialty. Whether you&apos;re looking
+                for a private ledger or want to create a DeFi application, I
+                have the skillset and experience to bring your ideas to life.
+              </p>
+            </div>
+          }
           image={
-            <img
-              className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-              src="https://images.unsplash.com/photo-1562583489-bf23ec64651d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"
-              alt=""
-            />
+            <>
+              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+                Blockchain
+              </div>
+              <img
+                className="w-full p-24 aspect-square rounded-xl object-contain  bg-neutral-800 shadow-xl shadow-black/40"
+                src="/ethereum.png"
+                alt=""
+              />
+            </>
           }
         />
         <Card3d
-          content={<>hello world</>}
+          content={
+            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+              <p>
+                Cloud computing is the future. By using cloud services, you can
+                scale your application without worrying about infrastructure.{" "}
+                <br /> As a certified AWS Solutions Architect, I can help you
+                build or migrate to a secure, scalable, and cost-effective cloud
+                infrastructure.
+              </p>
+            </div>
+          }
           image={
-            <img
-              className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-              src="https://images.unsplash.com/photo-1562583489-bf23ec64651d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"
-              alt=""
-            />
+            <>
+              <div className="absolute  text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+                Cloud
+              </div>
+              <img
+                className="w-full  aspect-square rounded-xl object-contain  bg-neutral-800 shadow-xl shadow-black/40"
+                src="/clouds.png"
+                alt=""
+              />
+            </>
           }
         />
         <Card3d
-          content={<>hello world</>}
+          content={
+            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+              <p>
+                When working with clients, I always make sure to understand
+                their needs and goals. I&apos;m a great listener and
+                communicator, and I&apos;m always looking for ways to improve my
+                skills and knowledge. I&apos;m also a team player and enjoy
+                collaborating with others to achieve a common goal.
+              </p>
+            </div>
+          }
           image={
-            <img
-              className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-              src="https://images.unsplash.com/photo-1562583489-bf23ec64651d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"
-              alt=""
-            />
+            <>
+              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+                Interpersonal
+              </div>
+              <img
+                className="w-full p-12 aspect-square rounded-xl object-contain  bg-neutral-800 shadow-xl shadow-black/40"
+                src="/interpersonal.png"
+                alt=""
+              />
+            </>
           }
         />
         <Card3d
-          content={<>hello world</>}
+          content={
+            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+              <p>
+                3D web experiences are an amazing way to impress your audience
+                and make your website stand out. I use Blender to create 3D
+                models and animations, and then use Three.js to render them in
+                the browser. Whether you want a 3D product configurator, a
+                virtual tour of your office, or a 3D game, I can help you create
+                a unique and engaging experience for your users.
+              </p>
+            </div>
+          }
           image={
-            <img
-              className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-              src="https://images.unsplash.com/photo-1562583489-bf23ec64651d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')"
-              alt=""
-            />
+            <>
+              <div className="absolute text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
+                3D
+              </div>
+              <img
+                className="w-full p-8  aspect-square rounded-xl object-contain  bg-neutral-800 shadow-xl shadow-black/40"
+                src="/blender.png"
+                alt=""
+              />
+            </>
           }
         />
       </div>
@@ -397,12 +492,12 @@ type Card3dProps = {
 };
 
 const Card3d: FC<Card3dProps> = ({ image, content }) => (
-  <div className="group h-96 w-96 [perspective:1000px]">
-    <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+  <div className="group h-96 font-Rubik w-96 [perspective:1000px]">
+    <div className="relative h-full w-full rounded-xl shadow-sm shadow-primary transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       {/* front of the card image */}
-      <div className="absolute inset-0 ">{image}</div>
+      <div className="absolute inset-0">{image}</div>
       {/* back of the card */}
-      <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+      <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 backdrop-blur text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
         {content}{" "}
       </div>
     </div>

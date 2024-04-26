@@ -9,6 +9,9 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      sans: ["Roboto Mono", "monospace"],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -66,6 +69,10 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+      },
+      fontFamily: {
+        Rubik: ["Rubik", "sans-serif"],
+        "Roboto-Mono": ["Roboto Mono", "monospace"],
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
