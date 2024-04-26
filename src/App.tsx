@@ -51,7 +51,7 @@ const Hero = () => {
     >
       <div className="lg:w-1/2 flex px-4 lg:text-left text-center items-center justify-center">
         <div className="w-max space-y-4">
-          <div>
+          <div className="min-w-[380px] ">
             <h4 className="tracking-wide  text-2xl leading-loose">
               Hi there 👋 I&apos;m
             </h4>
@@ -322,22 +322,47 @@ const Experience = () => {
 
 const Skills = () => {
   // const { scrollTo } = useScrollIntoView();
+  const typeRef = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    if (!typeRef.current) return;
+    const typed = new Typed(typeRef.current, {
+      strings: ["relationships", "software", "my skills"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 10000,
+      shuffle: true,
+      loop: true,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <section
       id="skills"
-      className="before:h-[100dvh] overflow-y-auto flex-col scrollbar-thin before:[w-screen] before:top-[200dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-gradient-to-br before:from-primary/20 before:via-background before:to-background  min-h-[100dvh] px-4 items-center  max-w-screen-2xl mx-auto flex  justify-center  py-20 w-full gap-8"
+      className="before:h-[100dvh]  overflow-y-auto flex-col scrollbar-thin before:[w-screen] before:top-[300dvh] before:left-0 before:right-0 before:-z-10 before:absolute before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-primary/20 before:via-background before:to-background  min-h-[100dvh] px-4 items-center  max-w-screen-2xl mx-auto flex gap-12 py-32 w-full"
     >
-      <div className="grid grid-cols-3 gap-6">
+      <h1 className="text-5xl font-bold text-center w-[500px]">
+        I&apos;m building <br />
+        <span
+          className="text-primary  font-Rubik text-7xl"
+          ref={typeRef}
+        ></span>
+        <br />
+        everyday
+      </h1>
+      <div className="grid sm:grid-cols-3 gap-6">
         <Card3d
           content={
             <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
-              <p>Here are some examples I&apos;ve built:</p>
+              {/* <p>Here are some examples I&apos;ve built:</p>
               <ol className="list-disc">
                 <li>Business Homepages</li>
                 <li>API Documentation</li>
                 <li>Portfolio Websites</li>
                 <li>Educational Content</li>
-              </ol>
+              </ol> */}
               <p>
                 I write frontend apps using modern technologies that are easy to
                 maintain and scale. Integrating a CMS allows my clients to
@@ -351,7 +376,7 @@ const Skills = () => {
                 Frontend
               </div>
               <img
-                className="h-full w-full rounded-xl object-contain bg-neutral-800 shadow-xl shadow-black/40"
+                className="h-full w-full p-8 rounded-xl object-contain bg-neutral-800 shadow-xl shadow-black/40"
                 src="/react-typescript.png"
                 alt=""
               />
@@ -457,14 +482,14 @@ const Skills = () => {
         />
         <Card3d
           content={
-            <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
+            <div className=" flex py-4 space-y-4 text-left flex-col w-full h-full ">
               <p>
-                3D web experiences are an amazing way to impress your audience
-                and make your website stand out. I use Blender to create 3D
-                models and animations, and then use Three.js to render them in
-                the browser. Whether you want a 3D product configurator, a
-                virtual tour of your office, or a 3D game, I can help you create
-                a unique and engaging experience for your users.
+                3D web experiences are an amazing way to make your website stand
+                out. I use Blender to create 3D models and animations, and then
+                use Three.js to create interactive browser experiences. Whether
+                you want a 3D product configurator, a virtual tour of your
+                office, or a 3D game, I can help you create a unique and
+                engaging experience for your users.
               </p>
             </div>
           }
@@ -492,12 +517,12 @@ type Card3dProps = {
 };
 
 const Card3d: FC<Card3dProps> = ({ image, content }) => (
-  <div className="group h-96 font-Rubik w-96 [perspective:1000px]">
+  <div className="group h-72 font-Rubik w-72 [perspective:1000px]">
     <div className="relative h-full w-full rounded-xl shadow-sm shadow-primary transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
       {/* front of the card image */}
       <div className="absolute inset-0">{image}</div>
       {/* back of the card */}
-      <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 backdrop-blur text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+      <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-4 backdrop-blur text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
         {content}{" "}
       </div>
     </div>
