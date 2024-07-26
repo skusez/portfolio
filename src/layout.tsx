@@ -2,13 +2,16 @@ import { FC, ReactNode } from "react";
 import { ThemeProvider } from "./components/theme-provider";
 import { ModeToggle } from "./components/theme-mode-toggle";
 import { useScrollIntoView } from "./hooks/useScrollIntoView";
+import { TooltipProvider } from "./components/ui/tooltip";
 type Props = {
   children: ReactNode;
 };
 export const Layout: FC<Props> = ({ children }) => (
   <ThemeProvider defaultTheme="dark">
-    <Navbar />
-    <main className="w-full  flex flex-col items-center">{children}</main>
+    <TooltipProvider>
+      <Navbar />
+      <main className="w-full  flex flex-col items-center">{children}</main>
+    </TooltipProvider>
   </ThemeProvider>
 );
 

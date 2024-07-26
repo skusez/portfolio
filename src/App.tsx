@@ -3,12 +3,20 @@ import { Layout } from "./layout";
 import { useScrollIntoView } from "./hooks/useScrollIntoView";
 import { FC, ReactNode, useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { QuoteIcon } from "@radix-ui/react-icons";
+import {
+  BoxIcon,
+  DiscordLogoIcon,
+  LockClosedIcon,
+  QuoteIcon,
+  CardStackIcon,
+} from "@radix-ui/react-icons";
+import Showcase from "./components/project-showcase";
 function App() {
   return (
     <Layout>
       <Hero />
       <About />
+      <Showcase />
       <Experience />
       <Skills />
     </Layout>
@@ -174,13 +182,14 @@ const About = () => {
             />
           </div>
         </div>
+
         <Link
-          onClick={() => scrollTo("experience")}
-          to="#experience"
+          onClick={() => scrollTo("projects")}
+          to="#projects"
           className="text-4xl cursor-pointer select-none mx-auto"
         >
           <span className="underline font-Rubik font-semibold">
-            Education & Experience
+            Projects I have worked on
           </span>
           <span className="no-underline"> 👇</span>
         </Link>
@@ -475,18 +484,17 @@ const Skills = () => {
           content={
             <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
               <p>
-                When working with clients, I always make sure to understand
-                their needs and goals. I&apos;m a great listener and
-                communicator, and I&apos;m always looking for ways to improve my
-                skills and knowledge. I&apos;m also a team player and enjoy
-                collaborating with others to achieve a common goal.
+                I believe interactive applications should be intuitive to use
+                and have that native feeling. Coming from a background in
+                videography, I have a keen eye for design and a passion for
+                creating beautiful and functional user interfaces.
               </p>
             </div>
           }
           image={
             <>
               <div className="absolute text-2xl lg:text-2xl lg:text-4xl font-bold w-full h-full  flex justify-center pt-8 overflow-hidden mx-auto inset-0">
-                Interpersonal
+                UI/UX Design
               </div>
               <img
                 className="w-full p-12 aspect-square rounded-xl object-contain  bg-neutral-800 shadow-xl shadow-black/40"
