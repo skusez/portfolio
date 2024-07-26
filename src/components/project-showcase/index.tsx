@@ -22,8 +22,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   LockClosedIcon,
   DiscordLogoIcon,
-  BoxIcon,
-  CardStackIcon,
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@radix-ui/react-icons";
