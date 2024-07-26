@@ -3,13 +3,7 @@ import { Layout } from "./layout";
 import { useScrollIntoView } from "./hooks/useScrollIntoView";
 import { FC, ReactNode, useEffect, useRef } from "react";
 import Typed from "typed.js";
-import {
-  BoxIcon,
-  DiscordLogoIcon,
-  LockClosedIcon,
-  QuoteIcon,
-  CardStackIcon,
-} from "@radix-ui/react-icons";
+import { QuoteIcon } from "@radix-ui/react-icons";
 import Showcase from "./components/project-showcase";
 function App() {
   return (
