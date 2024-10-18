@@ -1,16 +1,16 @@
-import { FC, ReactNode } from "react";
 import { ThemeProvider } from "./components/theme-provider";
 import { ModeToggle } from "./components/theme-mode-toggle";
 import { useScrollIntoView } from "./hooks/useScrollIntoView";
 import { TooltipProvider } from "./components/ui/tooltip";
-type Props = {
-  children: ReactNode;
-};
-export const Layout: FC<Props> = ({ children }) => (
+import { Outlet } from "react-router-dom";
+
+export const Layout = () => (
   <ThemeProvider defaultTheme="dark">
     <TooltipProvider>
       <Navbar />
-      <main className="w-full  flex flex-col items-center">{children}</main>
+      <main className="w-full  flex flex-col items-center">
+        <Outlet />
+      </main>
     </TooltipProvider>
   </ThemeProvider>
 );
@@ -49,6 +49,12 @@ const Navbar = () => {
               className="text-foreground"
             >
               Skills
+            </button>
+            <button
+              onClick={() => scrollTo("studies")}
+              className="text-foreground"
+            >
+              Studies
             </button>
           </div>
         </div>

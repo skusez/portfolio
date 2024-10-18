@@ -3,22 +3,38 @@ import { Layout } from "./layout";
 import { useScrollIntoView } from "./hooks/useScrollIntoView";
 import { FC, ReactNode, useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { Route, Routes } from "react-router-dom";
+
 import { QuoteIcon } from "@radix-ui/react-icons";
 import Showcase from "./components/project-showcase";
+import Studies from "./components/studies";
+import Reflections from "./components/reflections";
+import Reflection from "./components/reflection";
+
 function App() {
   return (
-    <Layout>
-      <Hero />
-      <About />
-      <Showcase />
-      <Experience />
-      <Skills />
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="reflections" element={<Reflections />} />
+        <Route path="reflection/:id" element={<Reflection />} />
+      </Route>
+    </Routes>
   );
 }
 
-export default App;
+const Home = () => (
+  <>
+    <Hero />
+    <About />
+    <Showcase />
+    <Experience />
+    <Skills />
+    <Studies />
+  </>
+);
 
+export default App;
 const Hero = () => {
   const { scrollTo } = useScrollIntoView();
   const typeRef = useRef<HTMLSpanElement>(null);
@@ -340,7 +356,7 @@ const Experience = () => {
 };
 
 const Skills = () => {
-  // const { scrollTo } = useScrollIntoView();
+  const { scrollTo } = useScrollIntoView();
   const typeRef = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     if (!typeRef.current) return;
@@ -371,7 +387,7 @@ const Skills = () => {
         <br />
         everyday
       </h1>
-      <div className="grid lg:grid-cols-3 max-h-full h-full overflow-y-auto scrollbar-thin scrollbar-thumb-primary sm:grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-3 max-h-full h-full overflow-hidden scrollbar-thin scrollbar-thumb-primary sm:grid-cols-2 gap-6">
         <Card3d
           content={
             <div className=" flex py-6 space-y-4 text-left flex-col w-full h-full ">
@@ -525,7 +541,14 @@ const Skills = () => {
           }
         />
       </div>
-      <p className="pb-4 text-primary">Thankyou for reading!</p>
+      <Link
+        onClick={() => scrollTo("studies")}
+        to="#studies"
+        className="text-4xl pb-8 cursor-pointer pt-4  select-none mx-auto"
+      >
+        <span className="underline font-Rubik font-semibold">My Studies</span>
+        <span className="no-underline"> 👇</span>
+      </Link>
     </section>
   );
 };
